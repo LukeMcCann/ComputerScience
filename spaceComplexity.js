@@ -76,3 +76,31 @@ let sum = (arr) => {
 // has a constant Space Complexity O(1), the number is inconsequential as it will always
 // remain constant, no matter our input the algorithm will always consist of two assignations
 // of which are allocated space in memory.
+
+// lets take a look at another example together. 
+
+let double = (arr) => {
+    let newArr = []; // Reference - linear space complexity
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(2 * arr[i]); // Numeric assignation - constant space complexity
+    }
+    return newArr; 
+}
+
+// Our first line in this algorithm we notice that a new array is made. This is creating
+// a reference in memory, which, as we know has a linearly scaling space complexity. 
+// We then see our loop create a new variable in the assignation component of (i), 
+// this is a constant space complexity primitive type. 
+// 
+// Lastly, we push the value at arr[i] multiplied by 2 into our newArray.
+// As the input approaches infinity, we want to know the overall trend of 
+// the space complexity. We can see that we create a new Array every time we 
+// run the algorithm, but this is insignificant compared to our later step of
+// pushing new items onto our array. 
+//
+// At the beginning our array is created with length 0, each time we iterate through 
+// our loop the array grows directly in proportion with that of the length of the input.
+// This points to an overall trend of a linear O(n) space complexity, this is after
+// our simplification, prior to simplification this would be written as O(n + 2) as 
+// we do also have two assignation components, however, these become insignificant the
+// closer n becomes to infinity. 
