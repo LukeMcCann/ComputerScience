@@ -91,3 +91,13 @@ names.shift('Jean');
 // As the time taken to perform this action grows in conjunction with the 
 // size of the array n.
 
+// push and pop - O(1) 
+// shift and unshift - O(n)
+// access - O(1)
+// searching - O(n) 
+
+// When we search, in a worst case scenario, we must loop over 
+// each of our elements and check each one to find the element we 
+// want. This scales linearly with the value of n.
+
+
