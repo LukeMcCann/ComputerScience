@@ -78,7 +78,7 @@ names.shift('Jean');
 // in order to enable us to add our item to the array.
 // Remember, an array enforces an intrinsic order, 
 // this means that if we have Jean at the start of 
-// our array Jean must be given an index of one, 
+// our array Jean must be given an index of zero, 
 // after which our other elements must also be re-indexed
 // with their correct index values.
 //
