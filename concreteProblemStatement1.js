@@ -164,3 +164,28 @@ let charCount = (str) => {
 // Regular expressions performance can vary depending on the situation.
 // Checking characters can be faster as we can write a function
 // with particular boolean expression comparisons rather than comparing expressions.
+
+
+// Final Refactor 
+
+let charCount = (str) => {
+    const result = {};
+    for (const char of str) {
+        char = char.toLowerCase();
+        if (isAlphaNumeric(char)) {
+            result[char] = ++result[char] || 1;
+        }
+    }
+    return result;
+}
+
+function isAlphaNumeric(char) {
+    const code = char.charCodeAt(0);
+    if (!(code > 47 && code < 58) &&  // numeric (0-9)
+        !(code > 64 && code < 91) &&
+        !(code > 96 && code < 123)) {
+            return false;
+        }
+        return true;
+}
+
