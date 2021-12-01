@@ -170,8 +170,8 @@ let charCount = (str) => {
 
 let charCount = (str) => {
     const result = {};
+    const str = str.toLowerCase();
     for (const char of str) {
-        char = char.toLowerCase();
         if (isAlphaNumeric(char)) {
             result[char] = ++result[char] || 1;
         }
