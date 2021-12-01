@@ -77,3 +77,75 @@ let charCount = (str) => {
 }
 
 console.log(charCount('aaa'));
+
+// We have the basis of our solution, but we still need to account
+// for lowercase characters.
+
+let charCount = (str) => {
+    const result = {};
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i].toLowerCase();
+        if (result[char] > 0) {
+            result[char]++;
+        } else {
+            result[char] = 1;
+        }
+    }
+    return result;
+}
+
+console.log(charCount("Hello!"));
+
+// At this point we still need to account for none-alphanumeric characters.
+// To tell if a number or character is alphanumeric we could have an array of
+// valid characters, this would be an annoying solution with a huge array
+// but it is possible. We could use a regular expression, or the ASCII/char codes. 
+
+
+// Look back and Refactor
+//
+// Once we have something workable we need to look back and refactor our code. 
+// often this is overlooked, you can get by with something that just works,
+// however, we want to ensure our solution is optimal, not necessarily in terms
+// of performance, but maintainability, and readability. We want to aim for code
+// cleanliness.
+
+// When we look back at our code to refactor, we should look back critically
+// and analyse the parts we like, that we don't like, and try to find
+// why we don't, and how we can do it better. We can do this by going
+// over a few questions in our own mind, or getting feedback from others
+// in a code review process.
+
+// Refactoring Questions:
+//
+// 1. Can you check the results?
+//
+// 2. Could you derive the results differently?
+//
+// 3. Is it understandable at a glance?
+//
+// 4. Is it reusable? could you take your solution and use it to solve
+//    another unrelated problem?
+//
+// 5. Can you improve the performance of your solution?
+//
+// 6. Can you think of other ways to refactor?
+//
+// 7. How have other people solved this problem?
+
+let charCount = (str) => {
+    const result = {};
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i].toLowerCase();
+        if (/a-z0-9/.test(char)) {
+            if (result[char] > 0) {
+                result[char]++;
+            } else {
+                result[char] = 1;
+            }
+        }
+    }
+    return result;
+}
+
+console.log(charCount("Hello!"));
