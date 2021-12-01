@@ -149,3 +149,18 @@ let charCount = (str) => {
 }
 
 console.log(charCount("Hello!"));
+
+let charCount = (str) => {
+    const result = {};
+    for (const char of str) {
+        char = char.toLowerCase();
+        if (/a-z0-9/.test(char)) {
+            result[char] = ++result[char] || 1;
+        }
+    }
+    return result;
+}
+
+// Regular expressions performance can vary depending on the situation.
+// Checking characters can be faster as we can write a function
+// with particular boolean expression comparisons rather than comparing expressions.
