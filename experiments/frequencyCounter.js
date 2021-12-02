@@ -74,3 +74,9 @@ console.log(same([1, 1, 2], [1, 4, 4]));
 // value in a to an index of n which already has
 // a valid comparator. This would mean the frequency
 // is the same, therefore, we finally return true
+
+
+// The problem with this solution is that it is quadratice O(n^2) 
+// It might not seem it at first, but if we take a closer look
+// we can see we call IndexOf which itself runs a loop.
+// this means we have yet to achieve our goal of avoiding nested loops in this solution.
